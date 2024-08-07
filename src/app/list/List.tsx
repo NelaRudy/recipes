@@ -1,18 +1,19 @@
-import { IRecipe } from "../types/recipe";
+import { getRecipes } from "@/services/recipe";
+import { Recipe } from "../../lib/types/recipe";
 import ListItem from "./ListItem";
 
 type ListProps = {
-    recipes: IRecipe[];
+    searchParams?: string[];
 };
 
-const List = ({ recipes }: ListProps) => {
+export default async function List ({ searchParams }: ListProps) {
+    const recipes = await getRecipes();
+
     return (
         <>
-            {recipes.map((recipe, index) => 
+            {recipes.map((recipe: Recipe) => 
                 <ListItem key={"recipe-" + recipe.id} recipe={recipe} />
             )}
         </>
     );
 };
-
-export default List;

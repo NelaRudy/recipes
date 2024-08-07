@@ -1,4 +1,4 @@
-export interface IImage { 
+export interface Image { 
   access: string;
   path: string;
   name: string;
@@ -12,13 +12,19 @@ export interface IImage {
   url: string;
 }
 
-export interface IRecipe {
+export interface RecipeUser {
+  name: string;
+  email: string;
+}
+
+export interface Recipe {
   id: number;
   created_at: number;
   title: string;
   description: string;
   user_id: number;
-  images: IImage[];
+  images: Image[];
+  _user: RecipeUser;
 }
 
   
