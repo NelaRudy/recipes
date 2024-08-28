@@ -1,4 +1,4 @@
-import Loading from "@/lib/components/Loading";
+import Loading from "@/lib/components/loading";
 
 export default function ListLoading() {
     return <Loading />;

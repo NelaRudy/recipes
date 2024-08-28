@@ -2,10 +2,12 @@ type HeaderProps = {
     children?: JSX.Element;
 };
 
-export const Header = ({children}: HeaderProps) => {
+const Header = ({children}: HeaderProps) => {
     return (
-        <header className="bg-teal-600 text-gray-50 sticky top-0 w-screen">
+        <header className="bg-teal-700 text-gray-50 sticky top-0 w-screen">
             {children}
         </header>
     );
 };
+
+export default Header;

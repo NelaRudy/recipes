@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { menuItems, menuItemsKeys } from "./consts";
 import { mergeClasses } from "@/lib/utils/classNameUtils";
 
 export type MenuLinkProps = { path: string, name: string };

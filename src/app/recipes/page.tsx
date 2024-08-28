@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import List from "./List";
 import ListLoading from "./loading";
-import Search from "./Search";
+import Search from "./components/search";
+import List from "./components/list";
 
 // z async moze byc wykorzystywany tylko po stronie serwera 
 export default function ListPage () {

@@ -1,7 +1,7 @@
-export type menuItemsKeys = "home" | "list" | "addRecipe";
+export type menuItemsKeys = "home" | "recipes" | "add-recipe";
 
 export const menuItems = {
     home: { path: "/", name: "Home"},
-    list: { path: "/list", name: "Recipes"},
-    addRecipe: { path: "/add", name: "Add recipe"},
+    list: { path: "/recipes", name: "Recipes"},
+    addRecipe: { path: "/add-recipe", name: "Add recipe"},
 }

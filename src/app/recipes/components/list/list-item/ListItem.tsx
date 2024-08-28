@@ -1,12 +1,12 @@
 "use client"
 
-import { Recipe } from "../../lib/types/recipe";
+import { Recipe } from "../../../../../lib/types/recipe";
 import Image from "next/image";
 import { format } from "date-fns";
 import { Suspense } from "react";
 import { recipeImageSrc } from "@/lib/consts";
-import FallbackImage from "./FallbackImage";
-import { redirect, useRouter } from "next/navigation";
+import FallbackImage from "../../fallback-image/FallbackImage";
+import { useRouter } from "next/navigation";
 import { RECIPE_ENDPOINT } from "@/services/consts";
 
 type ListItemProps = {
@@ -14,7 +14,7 @@ type ListItemProps = {
 };
 
 const ListItem = ({ recipe }: ListItemProps) => {
-    const imageSrc = recipe.images[0]?.url ?? recipeImageSrc;
+    const imageSrc = recipe.images === null ? recipeImageSrc : recipe.images[0].url;
     const { push } = useRouter();
 
     const onRecipeClick = () => {
@@ -32,14 +32,14 @@ const ListItem = ({ recipe }: ListItemProps) => {
             </Suspense>
             <div className="p-4 pt-2">
                 <div className="mb-8">
-                    <a href="#" className="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 inline-block truncate">{recipe.title}</a>
+                    <a href="#" className="text-gray-900 font-bold text-lg mb-2 hover:text-teal-600 inline-block truncate">{recipe.title}</a>
                     <p className="text-gray-700 text-sm truncate-multi-line">{recipe.description}</p>
                 </div>
                 <div className="flex items-center">
                     <a
                         href="#"><Image className="w-10 h-10 rounded-full mr-4" src="/assets/avatar.svg" width={40} height={40} alt="Avatar of Jonathan Reinink" /></a>
                     <div className="text-sm">
-                        <a href="#" className="text-gray-900 font-semibold leading-none hover:text-indigo-600">{recipe._user.name}</a>
+                        <a href="#" className="text-gray-900 font-semibold leading-none hover:text-teal-600">{recipe._user.name}</a>
                         <p className="text-gray-600">{format(recipe.created_at, "yyyy-MM-dd")}</p>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
-
 import React from 'react';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div>
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
@@ -12,3 +11,5 @@ export default function NotFound() {
     </div>
   );
 }
+
+export default NotFound;

@@ -4,7 +4,7 @@ type Props = {
     }
 };
 
-export default function RecipePage ({ params }: Props) {
+export default function RecipesPage ({ params }: Props) {
     return (
         <div>przepis ...{params.recipeId}...</div>
     );

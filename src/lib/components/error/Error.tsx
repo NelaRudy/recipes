@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export default function Error() {
+const Error = () => {
   return (
     <div>
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
@@ -12,3 +12,5 @@ export default function Error() {
     </div>
   );
 }
+
+export default Error;

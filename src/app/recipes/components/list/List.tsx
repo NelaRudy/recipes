@@ -1,6 +1,6 @@
 import { getRecipes } from "@/services/recipe";
-import { Recipe } from "../../lib/types/recipe";
-import ListItem from "./ListItem";
+import { Recipe } from "@/lib/types/recipe";
+import ListItem from "./list-item";
 
 type ListProps = {
     searchParams?: string[];
